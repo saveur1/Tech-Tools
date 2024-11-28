@@ -65,7 +65,7 @@ export default function Home() {
   }
   return (
     <Fragment>
-      <MetaData title="Buy Best Product Online!!"/>
+      <MetaData title="Best Online Products!"/>
 
       {
         loading ? <Loader />:(
@@ -74,8 +74,8 @@ export default function Home() {
             <section id="products" className="container mt-2">
                 <div className="row">
                   {
-                    keyword ? (
-                    <Fragment>
+                    keyword 
+                    ? (<Fragment>
                         <div className="col-6 col-md-3 mt-5 mb-5 mb-5">
                            <div className="px-5">
                              <Range 
@@ -153,9 +153,10 @@ export default function Home() {
                             }
                           </div>
                         </div>
-                    </Fragment>) : (
-                      products && products.map((product) => (
-                        <Product key={product._id} product={product} col={3}/>
+                    </Fragment>) 
+                    : (
+                        products && products.map((product) => (
+                            <Product key={product._id} product={product} col={3}/>
                     )))
                   }
               </div>

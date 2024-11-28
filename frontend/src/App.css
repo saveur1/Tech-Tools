@@ -37,7 +37,7 @@ nav {
 }
 
 #search_btn {
-  background-color: #9e701d;
+  background-color: #fa9c23;
 }
 
 #search_btn i {
@@ -60,7 +60,7 @@ a{
 
 #login_btn,
 #view_btn {
-  background-color: #9e701d;
+  background-color: #fa9c23;
   color: white;
   padding: 0.4rem 1.8rem;
   font-family: calibri;
@@ -72,7 +72,7 @@ a{
 }
 
 #cart_count {
-  background-color: #9e701d;
+  background-color: #fa9c23;
   padding: 0.2rem 0.5rem;
   border-radius: 0.2rem;
   color: white;
@@ -256,7 +256,7 @@ footer {
 }
 
 #card_item_price {
-  color: #9e701d;
+  color: #fa9c23;
   font-weight: bold;
   font-size: 1.4rem;
 }

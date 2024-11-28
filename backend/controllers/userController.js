@@ -33,29 +33,28 @@ exports.registerUser = asyncCatch(async(req,res,next)=>{
 
 //Login User => /api/v1/login
 exports.loginUser = asyncCatch(async(req,res,next)=>{
-    // const {email,password} = req.body;
+    const {email,password} = req.body;
 
-    // //check if email and password are set
-    // if(!email || !password){
-    //     return next(new ErrorHandler("Email and password are required",400));
-    // }
+    //check if email and password are set
+    if(!email || !password){
+        return next(new ErrorHandler("Email and password are required",400));
+    }
 
-    // //check if email is in databse
-    // const user = await User.findOne({email}).select("+password");
+    //check if email is in databse
+    const user = await User.findOne({email}).select("+password");
 
-    // if(!user){
-    //     return next(new ErrorHandler("Invalid email or password",401));
-    // }
+    if(!user){
+        return next(new ErrorHandler("Invalid email or password",401));
+    }
 
-    // //check if password is in databse
-    // const isMatch = await user.comparePassword(password);
+    //check if password is in databse
+    const isMatch = await user.comparePassword(password);
 
-    // if(!isMatch){
-    //     return next(new ErrorHandler("Invalid email or password",401));
-    // }
+    if(!isMatch){
+        return next(new ErrorHandler("Invalid email or password",401));
+    }
 
-    // sendToken(200,user,res);
-    return new ErrorHandler("Email and password are required",400);
+    sendToken(200,user,res);
 });
 
 //User forgot password => /api/v1/password/forgot
