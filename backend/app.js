@@ -5,9 +5,9 @@ const app = express();
 const errorMiddleWare = require("./middlewares/errors");
 const pageNotFound = require("./middlewares/pageNotFound");
 const cookieParser = require("cookie-parser");
-const cors = require("cors");
+// const cors = require("cors");
 const fileUpload = require("express-fileupload");
-// const path = require("path");
+const path = require("path");
 const compression = require("compression");
 const { default: helmet } = require("helmet");
 
@@ -27,11 +27,22 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(cookieParser());
 app.use(fileUpload());
 app.use(compression());
-app.use(helmet());
-app.use(cors({
-    credentials:true,
-    origin: "http://localhost:3000"
-}));//https://mytech-shop.vercel.app
+
+app.use(
+    helmet({
+      contentSecurityPolicy: {
+        directives: {
+          defaultSrc: ["'self'"],
+          imgSrc: ["'self'", "data:", "https://res.cloudinary.com"],
+        },
+      },
+    })
+);
+
+// app.use(cors({
+//     credentials:true,
+//     origin: "http://localhost:3000"
+// }));
 
 
 app.use("/api/v1",products);
@@ -39,13 +50,13 @@ app.use("/api/v1",users);
 app.use("/api/v1",order);
 app.use("/api/v1",payment);
 
-// if(process.env.NODE_ENV === "PRODUCTION"){
-//     app.use(express.static(path.join(__dirname,"../frontend/build")));
+if(process.env.NODE_ENV === "PRODUCTION"){
+    app.use(express.static(path.join(__dirname,"../frontend/build")));
 
-//     app.get("*",(req,res)=>{
-//         res.sendFile(path.resolve(path.join(__dirname,"../frontend/build/index.html")));
-//     })
-// }
+    app.get("*",(req,res)=>{
+        res.sendFile(path.resolve(path.join(__dirname,"../frontend/build/index.html")));
+    })
+}
 
 // Error Handling Middleware
 app.use(pageNotFound);

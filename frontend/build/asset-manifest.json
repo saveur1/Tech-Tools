@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/saveur1/Tech-Tools/tree/main/frontend/build/static/css/main.51833027.css",
+    "main.js": "/saveur1/Tech-Tools/tree/main/frontend/build/static/js/main.7692b3b4.js",
+    "index.html": "/saveur1/Tech-Tools/tree/main/frontend/build/index.html",
+    "main.51833027.css.map": "/saveur1/Tech-Tools/tree/main/frontend/build/static/css/main.51833027.css.map",
+    "main.7692b3b4.js.map": "/saveur1/Tech-Tools/tree/main/frontend/build/static/js/main.7692b3b4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.51833027.css",
+    "static/js/main.7692b3b4.js"
+  ]
+}

@@ -71,7 +71,7 @@ export default function Home() {
         loading ? <Loader />:(
           <Fragment>
             <h1 id="products_heading">Latest Products</h1>
-            <section id="products" className="container mt-5">
+            <section id="products" className="container mt-2">
                 <div className="row">
                   {
                     keyword ? (
