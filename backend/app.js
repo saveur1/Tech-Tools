@@ -32,8 +32,10 @@ app.use(
     helmet({
       contentSecurityPolicy: {
         directives: {
-          defaultSrc: ["'self'"],
-          imgSrc: ["'self'", "data:", "https://res.cloudinary.com"],
+            defaultSrc: ["'self'"],
+            imgSrc: ["'self'", "data:", "https://res.cloudinary.com"],
+            scriptSrc: ["'self'", "https://tech-tools.onrender.com", "/static/js/*"],
+            styleSrc: ["'self'", "/static/css/*"],
         },
       },
     })
