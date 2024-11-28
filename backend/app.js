@@ -34,8 +34,24 @@ app.use(
         directives: {
             defaultSrc: ["'self'"],
             imgSrc: ["'self'", "data:", "https://res.cloudinary.com"],
-            scriptSrc: ["'self'", "https://tech-tools.onrender.com", "/static/js/*"],
-            styleSrc: ["'self'", "/static/css/*"],
+            scriptSrc: [
+                        "'self'", 
+                        "https://tech-tools.onrender.com", 
+                        "/static/js/*",
+                        "https://code.jquery.com/jquery-3.5.1.slim.min.js",
+                        "https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js",
+                        "https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js",
+                        "https://kit.fontawesome.com/d2aea00760.js",
+                        "https://js.stripe.com/v3"
+
+            ],
+            styleSrc: [
+                        "'self'", 
+                        "/static/css/*",
+                        "https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css",
+                        "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css",
+                        "https://db.onlinewebfonts.com/c/157c6cc36dd65b1b2adc9e7f3329c761?family=Amazon+Ember",
+            ],
         },
       },
     })
